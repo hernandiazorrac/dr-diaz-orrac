@@ -12,11 +12,15 @@
 
 /* NAVBAR */
 header {
+  position: relative;
   background-color: #ffffff;
+  z-index: 100;
+  box-shadow: 0px 4px 40px 50px rgba(0, 0, 0, 0.56);
+  -webkit-box-shadow: 0px 4px 40px 50px rgba(0, 0, 0, 0.56);
+  -moz-box-shadow: 0px 4px 40px 50px rgba(0, 0, 0, 0.56);
 }
 
 #navbarNav {
-  padding: 2em 0;
   font-size: 1em;
   text-transform: uppercase;
   font-weight: 600;
@@ -25,10 +29,26 @@ header {
 .nav-link {
   padding: 0.2em;
   color: #08519d;
+  position: relative;
 }
 
 .nav-link:hover {
   color: #41b7c4;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 0;
+  height: 1px;
+  background-color: #41b7c4;
+  transition: width 0.2s ease-in-out;
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
 
 /* CAROUSEL AND HERO SECTION */
@@ -38,7 +58,7 @@ header {
 }
 .carousel-item img {
   object-fit: cover;
-  max-height: calc(100vh - 110.38px);
+  max-height: calc(100vh - 92px);
 }
 
 .carousel-item::before {
@@ -67,7 +87,7 @@ header {
   width: 40%;
   margin: 0 auto;
   margin-bottom: 0.2em;
-  font-size: 60px;
+  font-size: 4vw;
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1em;
@@ -76,11 +96,12 @@ header {
 }
 
 .estudioText {
+  font-size: 2.5vw;
   font-weight: 100;
 }
 
 .heroText {
-  font-size: 20px;
+  font-size: 1vw;
   margin: 0 auto;
   width: 40%;
 }
@@ -88,50 +109,113 @@ header {
 /* CONTACT BUTTON */
 
 .contactBtn {
-    --color: #f1a738;
-    font-family: inherit;
-    display: inline-block;
-    width: 8em;
-    height: 2.6em;
-    line-height: 2.5em;
-    margin: 20px;
-    position: relative;
-    overflow: hidden;
-    border: 2px solid var(--color);
-    transition: color .5s;
-    z-index: 1;
-    font-size: 17px;
-    border-radius: 15px;
-    font-weight: 500;
-    color: var(--color);
-   }
-   
-   .contactBtn:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    background: var(--color);
-    height: 150px;
-    width: 200px;
-    border-radius: 50%;
-   }
-   
-   .contactBtn:hover {
-    color: #fff;
-   }
-   
-   .contactBtn:before {
-    top: 100%;
-    left: 100%;
-    transition: all .3s;
-   }
-   
-   .contactBtn:hover:before {
-    top: -30px;
-    left: -30px;
-   }
-   
-   .contactBtn:active:before {
-    background: #b67007;
-    transition: background 0s;
-   }
+  --color: #f1a738;
+  font-family: inherit;
+  display: inline-block;
+  width: 10em;
+  height: 2.6em;
+  line-height: 2.5em;
+  margin: 20px;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  transition: color 0.5s;
+  z-index: 1;
+  font-size: 17px;
+  border-radius: 50px;
+  font-weight: 500;
+  color: #08519d;
+}
+
+.contactBtn:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  height: 150px;
+  width: 250px;
+  border-radius: 50%;
+}
+
+.contactBtn:hover {
+  color: #fff;
+}
+
+.contactBtn:before {
+  top: 100%;
+  left: 100%;
+  transition: all 0.3s;
+}
+
+.contactBtn:hover:before {
+  top: -30px;
+  left: -30px;
+}
+
+.contactBtn:active:before {
+  background: #b67007;
+  transition: background 0s;
+}
+
+/* MAIN SECTION */
+
+.nuestroEstudio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 70%;
+  height: 500px;
+}
+
+.nuestroEstudioTitle {
+  color: #08519d;
+  text-transform: uppercase;
+  border-bottom: 2px solid rgb(73, 73, 73);
+  margin-bottom: 1em;
+  font-size: 3vw;
+  font-weight: 700;
+  overflow: hidden;
+}
+
+.nuestroEstudioText {
+  width: 60%;
+  overflow: hidden;
+}
+
+.equipo h2 {
+  color: #08519d;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  font-size: 3vw;
+  font-weight: 700;
+  border-bottom: 2px solid rgb(73, 73, 73);
+  width: 11%;
+  margin: 0 auto;
+}
+
+.equipoCardGroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 3em;
+}
+
+.equipoCardGroup img{
+  border: 2px solid black;
+  border-radius: 1000px;
+  height: 200px;
+  padding: 1em;
+}
+
+.equipoImgCard{
+  display: flex;
+  flex-direction: column;
+}
+
+.equipoImgCard span, h3{
+  display: flex;
+  justify-content: center;
+}
