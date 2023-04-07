@@ -1,8 +1,20 @@
-const equipoSection = document.getElementById('equipo')
-const contactButton = document.getElementById('contactBtn')
+// SCROLL TO SECTION
 
-document.querySelector('a[href="#equipo"]').addEventListener('click', (e) => {e.preventDefault})
-document.querySelector('a[href="#contactBtn"]').addEventListener('click', (e) => {e.preventDefault})
+const equipoSection = document.getElementById('inicio')
+
+document.querySelector('a[href="#inicio"]').addEventListener('click', (e) => {e.preventDefault})
 
 equipoSection.scrollIntoView({behavior: "smooth"})
-contactButton.scrollIntoView({behavior: "smooth"})
+
+
+// SHRINK NAVBAR ON SCROLL
+
+window.addEventListener('scroll', () => {
+    let navbar = document.getElementById('navbar')
+
+    if (window.scrollY > 500){
+        navbar.classList.add('shrink')
+    } else {
+        navbar.classList.remove('shrink')
+    }
+})

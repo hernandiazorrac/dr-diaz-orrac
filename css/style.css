@@ -12,16 +12,21 @@
 }
 
 /* NAVBAR */
-header {
-  position: relative;
+#navbar {
   background-color: #ffffff;
-  z-index: 100;
-  box-shadow: 0px 4px 40px 50px rgba(0, 0, 0, 0.56);
-  -webkit-box-shadow: 0px 4px 40px 50px rgba(0, 0, 0, 0.56);
-  -moz-box-shadow: 0px 4px 40px 50px rgba(0, 0, 0, 0.56);
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: fixed;
+  transition: all 0.3s ease-in-out;
+  padding: 1em;
 }
 
-#navbarNav {
+#navbar.shrink{
+padding: .01em;
+}
+
+#navbarNav{
   font-size: 1em;
   text-transform: uppercase;
   font-weight: 600;
@@ -48,7 +53,7 @@ header {
   transition: width 0.2s ease-in-out;
 }
 
-.nav-link:hover::after{
+.nav-link:hover::after {
   width: 100%;
 }
 
@@ -59,7 +64,7 @@ header {
 }
 .carousel-item img {
   object-fit: cover;
-  max-height: calc(100vh - 92px);
+  max-height: calc(100vh + 1em);
 }
 
 .carousel-item::before {
@@ -121,11 +126,11 @@ header {
   overflow: hidden;
   border: none;
   transition: color 0.5s;
-  z-index: 1;
+  z-index: 100;
   font-size: 17px;
   border-radius: 50px;
   font-weight: 500;
-  color: #FFF;
+  color: #fff;
   background-color: var(--color);
 }
 
@@ -133,7 +138,7 @@ header {
   content: "";
   position: absolute;
   z-index: -1;
-  background: #FFF;
+  background: #fff;
   height: 150px;
   width: 250px;
   border-radius: 50%;
@@ -155,11 +160,11 @@ header {
 }
 
 .contactBtn:active:before {
-  background: #FFF;
+  background: #fff;
   transition: background 0s;
 }
 
-/* MAIN SECTION */
+/* ESTUDIO */
 
 .nuestroEstudio {
   display: flex;
@@ -186,9 +191,11 @@ header {
   overflow: hidden;
 }
 
-.equipo{
+/* EQUIPO */
+
+.equipo {
   background-color: #f7f7f7;
-  padding: 8em;
+  padding: 7em;
 }
 
 .equipo h2 {
@@ -199,7 +206,7 @@ header {
   font-size: 3vw;
   font-weight: 700;
   border-bottom: 2px solid rgb(73, 73, 73);
-  width: 13%;
+  width: 12%;
   margin: 0 auto;
 }
 
@@ -207,45 +214,51 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  margin-top: 3em;
+  margin-top: 7em;
 }
 
-.equipoCardGroup img{
+.equipoCardGroup img {
   border: 2px solid black;
   border-radius: 1000px;
   height: 200px;
   padding: 1em;
 }
 
-.equipoImgCard{
+.equipoImgCard {
   display: flex;
   flex-direction: column;
 }
 
-.equipoImgCard span, h3{
+.equipoImgCard span,
+h3 {
   display: flex;
   justify-content: center;
 }
 
-.datosContacto{
+/* CONTACTO */
+
+.datosContacto {
   display: flex;
   flex-direction: column;
 }
 
-.phoneIcon, .locationIcon, .emailIcon{
+.phoneIcon,
+.locationIcon,
+.emailIcon {
   border: 1px solid black;
   border-radius: 100%;
   padding: 15px;
-  transition: .1s ease-in-out;
+  margin: 15px 0;
 }
 
-.contactAndLocation{
+.contactAndLocation {
   display: flex;
   justify-content: space-around;
   padding: 5em;
+  align-items: center;
 }
 
-.contactTitle{
+.contactTitle {
   display: flex;
   width: 16%;
   margin: 0 auto;
@@ -256,4 +269,13 @@ header {
   font-size: 3vw;
   font-weight: 700;
   border-bottom: 2px solid rgb(73, 73, 73);
+}
+
+.mapLocation {
+  border: 2px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 0px 34px -28px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 0px 34px -28px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 34px -28px rgba(0,0,0,0.75);
 }
